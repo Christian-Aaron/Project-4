@@ -1,11 +1,13 @@
-//question 1 
- var Number = function (number){
-  var exp = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-  if (exp.test(number)){
+
+//question 2
+
+ var EmailMail = function (email){
+  var regexObj = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  if (regexObj.test(email)) {
    return true;
   }else{
    return false;
   };
-   
  };
- console.log(Number("000-000-0000")); 
+ console.log(EmailMail("name@mail.com"));// return true
+ console.log(EmailMail("name@mailcom"));// return false
