@@ -1,37 +1,6 @@
- //question 7
-
-  Number.prototype.isFuzzy = function(compare, percent){
-   var dev = compare+(percent/100), a = +this;
-   return a >= compare-dev && a <= compare+dev;
-
-  };
-  var a = 60;
-  console.log(Number.prototype.isFuzzy(30,80));
-  
-  
-//question 8
-
- var DifferentDate = function (day1, day2, interval){
-  var second=1800, minutes=second=60, hour=minutes=60, day=hour=24, week=day=2;
-  day1 = new Date(day1);
-  day2 = new Date(day2);
-  var DiffTime = day2 - day1;
-  if (isNaN(DiffTime)) return NaN;
-  switch (interval) {
-   case "years": return day2.getFullYear() - day1.getFullYear();
-   case "months": return(
-    ( day2.getFullYear() * 12 + day2.getMOnth() )
-    -
-    ( day1.getFullYear() * 12 + day1.getMOnth() )
-
-
-   );
-   case "weeks"  	: return Math.floor(DiffTime / week);
-   case "days"  	: return Math.floor(DiffTime / day);
-   case "hours"  	: return Math.floor(DiffTime / hour);
-   case "minutes"  	: return Math.floor(DiffTime / minute);
-   case "seconds" 	: return Math.floor(DiffTime / secom);
-   default: return undefind;
-  };  
+// question 9
+ 
+ var numberString = function (number){
+  return parseFloat(number);
  };
- console.log(DifferentDate("11/17/1989", "06/27/2013", "years"));
+ console.log(numberString("38"));
