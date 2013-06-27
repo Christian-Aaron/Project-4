@@ -1,13 +1,13 @@
+// question 3
 
-//question 2
-
- var EmailMail = function (email){
-  var regexObj = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  if (regexObj.test(email)) {
-   return true;
+ var YourUrl = function (url){
+ if (url.substring(0,5) == "http:" || url.substring (0,6) == "https:")
+  {
+   return true; 
   }else{
    return false;
   };
+
  };
- console.log(EmailMail("name@mail.com"));// return true
- console.log(EmailMail("name@mailcom"));// return false
+ console.log(YourUrl("http://www.google.com"));//return true
+ console.log(YourUrl("https://google")); //return false
