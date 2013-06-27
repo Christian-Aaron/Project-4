@@ -1,9 +1,9 @@
- // question 5
+ //question 6
 
- var DifferentString = function (string){
-  var NewString = string.replace(/, /g, '/');
-  return NewString
- 
+
+ var MoneyCents = function(money){
+  var differentMoney = money.toFixed(2)
+  return differentMoney;
+
  };
-
- console.log(DifferentString("a, b, c")); //should come back as a/b/c
+ console.log(MoneyCents(2.1));
