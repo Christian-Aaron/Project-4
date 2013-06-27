@@ -1,0 +1,11 @@
+//question 1 
+ var Number = function (number){
+  var exp = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+  if (exp.test(number)){
+   return true;
+  }else{
+   return false;
+  };
+   
+ };
+ console.log(Number("000-000-0000"));
