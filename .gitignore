@@ -1,59 +1,8 @@
-// Array questions 10-12 
-//this was easier making it all one function.
-//question 10
-var ArrayList = function () {
-	
-	var SmallValueArray = function (array,num) {
-		array.sort(function(a,b){return a-b;});
-		if (num >= array[0] && num < array[array.length-1]) {
-			array.push(num);
-			array.sort(function(a,b){return a-b;});
-			var result = array[array.lastIndexOf(num) + 1];
-			return result;
-		} else {
-			return null;
-		};
-	};
+var CapWord = function (words){
+  var wordList = words.split(" ");
+  for ( i = 0; i < wordList.length; i++){
+   console.log(wordList[i].charAt(0).toUpperCase() + wordList[i].slice(1));
+  };
 
-
-//question 11
-	
-	var TotalNumberArray = function (array) {
-		var total = 0;
-		for (var i = 0, j = array.length; i < j; i++) {
-			if (array[i]/1 === array[i]) {
-				total += array[i];
-			};
-		};
-		return total;
-	};
-	
-
-
-//question 12
-
-	var SortArray = function (array,givenKey) {
-		return (array.sort(function(a,b){return a[givenKey] - b[givenKey];}));
-	};
-	
-
-	return {
-		"SmallValueArray" : SmallValueArray,
-		"TotalNumberArray" : TotalNumberArray,
-		"SortArray" : SortArray,
-		
-	};
-};
-
-
-
-
-var arrayLib = ArrayList();
-var numList = [1,5,9,10,12,2,4,8];
-console.log(arrayLib.SmallValueArray(numList,1));
-
-var ObjectList = [10,"STI","Black",10,"MyCar","10"];
-console.log(arrayLib.TotalNumberArray(ObjectList));
-
-var MixedArray = [{a:2},{a:3},{a:1}];
-console.log(arrayLib.SortArray(MixedArray,"a"));
+ };
+CapWord("alex brian chris aaron tom");
