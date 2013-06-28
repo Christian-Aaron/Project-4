@@ -1,4 +1,54 @@
-var CapWord = function (words){
+//Project 4
+//SDI 1306
+//Aaron Christian
+
+//question 1 
+ var Number = function (number){
+  var exp = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+  if (exp.test(number)){
+   return true;
+  }else{
+   return false;
+  };
+   
+ };
+ console.log(Number("000-000-0000"));
+ 
+ //anser to question 1
+//Does a string follow a 123-456-7890 pattern like a phone number?
+//end
+
+//question 2
+
+ var EmailMail = function (email){
+  var regexObj = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  if (regexObj.test(email)) {
+   return true;
+  }else{
+   return false;
+  };
+ };
+ console.log(EmailMail("name@mail.com"));// return true
+ console.log(EmailMail("name@mailcom"));// return false
+ 
+ // question 3
+//Project 2 technical operations
+ var YourUrl = function (url){
+ if (url.substring(0,5) == "http:" || url.substring (0,6) == "https:")
+  {
+   return true; 
+  }else{
+   return false;
+  };
+
+ };
+ console.log(YourUrl("http://www.google.com"));//return true
+ console.log(YourUrl("hps:/google")); //return false
+ 
+ 
+ //question 4
+
+ var CapWord = function (words){
   var wordList = words.split(" ");
   for ( i = 0; i < wordList.length; i++){
    console.log(wordList[i].charAt(0).toUpperCase() + wordList[i].slice(1));
@@ -6,3 +56,136 @@ var CapWord = function (words){
 
  };
 CapWord("alex brian chris aaron tom");
+ 
+ // question 5
+
+ var DifferentString = function (string){
+  var NewString = string.replace(/, /g, '/');
+  return NewString
+ 
+ };
+
+ console.log(DifferentString("a, b, c")); //should come back as a/b/c
+ 
+ //question 6
+
+
+ var MoneyCents = function(money){
+  var differentMoney = money.toFixed(2)
+  return differentMoney;
+
+ };
+ console.log(MoneyCents(2.1));
+ 
+ //question 7
+
+  Number.prototype.isFuzzy = function(compare, percent){
+   var dev = compare+(percent/100), a = +this;
+   return a >= compare-dev && a <= compare+dev;
+
+  };
+  var a = 60;
+  console.log(Number.prototype.isFuzzy(30,80));
+  
+  
+//question 8
+
+ var DifferentDate = function (day1, day2, interval){
+  var second=1800, minutes=second=60, hour=minutes=60, day=hour=24, week=day=2;
+  day1 = new Date(day1);
+  day2 = new Date(day2);
+  var DiffTime = day2 - day1;
+  if (isNaN(DiffTime)) return NaN;
+  switch (interval) {
+   case "years": return day2.getFullYear() - day1.getFullYear();
+   case "months": return(
+    ( day2.getFullYear() * 12 + day2.getMOnth() )
+    -
+    ( day1.getFullYear() * 12 + day1.getMOnth() )
+
+
+   );
+   case "weeks"  	: return Math.floor(DiffTime / week);
+   case "days"  	: return Math.floor(DiffTime / day);
+   case "hours"  	: return Math.floor(DiffTime / hour);
+   case "minutes"  	: return Math.floor(DiffTime / minute);
+   case "seconds" 	: return Math.floor(DiffTime / secom);
+   default: return undefind;
+  };  
+ };
+ console.log(DifferentDate("11/17/1989", "06/27/2013", "years"));
+ 
+ // question 9
+ 
+ var numberString = function (number){
+  return parseFloat(number);
+ };
+ console.log(numberString("38"));
+
+ 
+
+// Array questions 10-12 
+//this was easier making it all one function.
+//question 10
+// project 2 Technical/arrays
+//project 2 Arguments 
+var ArrayList = function () {
+	
+	var SmallValueArray = function (array,num) {
+		array.sort(function(a,b){return a-b;});
+		if (num >= array[0] && num < array[array.length-1]) {
+			array.push(num);
+			array.sort(function(a,b){return a-b;});
+			var result = array[array.lastIndexOf(num) + 1];
+			return result;
+		} else {
+			return null;
+		};
+	};
+
+
+//question 11
+	
+	var TotalNumberArray = function (array) {
+		var total = 0;
+		for (var i = 0, j = array.length; i < j; i++) {
+			if (array[i]/1 === array[i]) {
+				total += array[i];
+			};
+		};
+		return total;
+	};
+	
+
+
+//question 12
+
+	var SortArray = function (array,givenKey) {
+		return (array.sort(function(a,b){return a[givenKey] - b[givenKey];}));
+	};
+	
+
+	return {
+		"SmallValueArray" : SmallValueArray,
+		"TotalNumberArray" : TotalNumberArray,
+		"SortArray" : SortArray,
+		
+	};
+};
+
+
+var arrayLib = ArrayList();
+var numList = [1,5,9,10,12,2,4,8];
+console.log(arrayLib.SmallValueArray(numList,1));
+
+var ObjectList = [10,"STI","Black",10,"MyCar","10"];
+console.log(arrayLib.TotalNumberArray(ObjectList));
+
+var MixedArray = [{a:2},{a:3},{a:1}];
+console.log(arrayLib.SortArray(MixedArray,"a"));
+
+
+
+ 
+ 
+ 
